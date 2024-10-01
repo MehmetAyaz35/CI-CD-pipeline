@@ -20,7 +20,7 @@ jobs:
           node-version: "18" # updated version instead of '16'
 
       - name: Install dependencies
-        run: npm install # instead of 'npm install'
+        run: npm ci # instead of 'npm install'
 
       - name: Run tests
         run: npm test -- --coverage # coverage reports
