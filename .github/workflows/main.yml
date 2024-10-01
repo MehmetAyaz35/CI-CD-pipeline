@@ -2,26 +2,26 @@ name: main.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'  # Güncellenmiş sürüm
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18" # updated version instead of '16'
 
-    - name: Install dependencies
-      run: npm ci  # package-lock.json varsa daha güvenilir
+      - name: Install dependencies
+        run: npm install # instead of 'npm install'
 
-    - name: Run tests
-      run: npm test -- --coverage  # Testler ve coverage raporları
+      - name: Run tests
+        run: npm test -- --coverage # coverage reports
 
