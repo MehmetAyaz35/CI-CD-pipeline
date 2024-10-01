@@ -17,10 +17,11 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
-        
+        node-version: '18'  # Güncellenmiş sürüm
+
     - name: Install dependencies
-      run: npm install
+      run: npm ci  # package-lock.json varsa daha güvenilir
 
     - name: Run tests
-      run: npm test
+      run: npm test -- --coverage  # Testler ve coverage raporları
+
